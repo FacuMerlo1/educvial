@@ -6,11 +6,18 @@
     <title>Document</title>
     <style>
         body {
-            background: linear-gradient(120deg, #f0f4f8 60%, #dbeafe 100%);
+            background: linear-gradient(120deg, #ffffff 70%, #eaf6ff 100%);
+            background-size: 200% 200%;
+            animation: gradientMove 8s ease-in-out infinite;
             font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
+        }
+        @keyframes gradientMove {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
         }
         h1 {
             margin-top: 40px;
@@ -19,13 +26,42 @@
             font-weight: bold;
             letter-spacing: 2px;
             text-shadow: 2px 2px 8px #dbeafe;
+            animation: fadeInDown 1.2s;
+        }
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-40px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
         h2 {
             font-size: 40px;
-            color: #217dbb;
+            color: #18304b;
+            background: #eaf6ff;
             margin-bottom: 20px;
             margin-top: 40px;
-            text-shadow: 1px 1px 6px #e0e7ef;
+            text-shadow: 2px 2px 12px #b6d4fe, 0 4px 24px #217dbb44;
+            letter-spacing: 1.5px;
+            animation: fadeIn 1.5s;
+            position: relative;
+            padding: 18px 32px 24px 32px;
+            border-radius: 18px;
+            border: 2.5px solid #3498db;
+            display: inline-block;
+            box-shadow: 0 4px 24px #217dbb22;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            margin: 18px auto 0 auto;
+            background: linear-gradient(90deg, #217dbb, #00c3ff, #3498db);
+            border-radius: 3px;
+            box-shadow: 0 2px 8px #217dbb44;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
         a {
             display: inline-block;
@@ -74,17 +110,25 @@
             box-shadow: 0 2px 12px rgba(44,62,80,0.12);
             background: #eaf6ff;
             border: 1px solid #b6d4fe;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        video:hover {
+            box-shadow: 0 6px 24px rgba(33,125,187,0.25);
+            transform: scale(1.03);
         }
         p {
-            font-size: 1.15em;
+            font-size: 1.18em;
             color: #34495e;
-            max-width: 800px;
-            margin: 30px auto 40px auto;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(44,62,80,0.08);
-            padding: 20px 30px;
-            line-height: 1.6;
+            max-width: 850px;
+            margin: 35px auto 45px auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(33,125,187,0.10);
+            padding: 28px 38px;
+            line-height: 1.7;
+            border-left: 6px solid #217dbb;
+            border-right: 6px solid #3498db;
+            animation: fadeIn 1.8s;
         }
         @media (max-width: 800px) {
             h1 {
@@ -104,7 +148,9 @@
     </style>
 </head>
 <body>
-    <h1>5TO AÑO A</h1>
+    <h2 style="margin-top: 40px; font-size: 2.5em; color: #217dbb;">Educación vial y ciudadanía — Una mirada desde Villa Dolores</h2>
+    <h1 style="margin-top: 60px;">5TO AÑO A</h1>
+    <p>Este proyecto busca analizar la educación vial desde una perspectiva integral que articula la historia, la geografía y la psicología, aplicándolo a la realidad local de Villa Dolores. La propuesta se centra en reconocer las causas de los problemas de tránsito, reflexionar sobre la importancia de respetar las normas y generar propuestas concretas para mejorar la convivencia ciudadana.</p>
     <!-- Mapa personalizado de Google Maps debajo del título -->
     <a href="https://www.google.com/maps/d/u/0/edit?mid=12JjUAvvjpOzxjRKp4Fkb57HC05Uh3LE&usp=sharing" target="_blank">
         Ver mapa personalizado de Google
@@ -149,10 +195,8 @@
             Tu navegador no soporta video HTML5.
         </video>
     </div>
-    <h2>Educación vial y ciudadanía — Una mirada desde Villa Dolores</h2>
-    <p>Este proyecto busca analizar la educación vial desde una perspectiva integral que articula la historia, la geografía y la psicología, aplicándolo a la realidad local de Villa Dolores. La propuesta se centra en reconocer las causas de los problemas de tránsito, reflexionar sobre la importancia de respetar las normas y generar propuestas concretas para mejorar la convivencia ciudadana.</p>
+
     
     
 </body>
-
 </html>
